@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustleakp - Beranda</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen">
+
+    <!-- Container utama ala layar HP -->
+    <div class="w-full max-w-sm bg-slate-50 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-6 text-slate-800 min-h-[600px] relative">
+        
+        <!-- Bagian Atas: Logo, Nama Aplikasi & Notifikasi -->
+        <div>
+            <div class="flex justify-between items-center mb-5">
+                <div class="flex items-center space-x-2">
+                    <!-- Logo Baru -->
+                    <img src="logo-Hustleakp.png" alt="Hustleakp Logo" class="w-9 h-9 object-contain rounded-xl">
+                    <span class="font-bold text-slate-900 text-lg">Hustleakp</span>
+                </div>
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm border border-slate-100 text-slate-600 cursor-pointer">
+                    🔔
+                </div>
+            </div>
+
+            <!-- Sapaan Pengguna -->
+             <!-- Sapaan Pengguna -->
+            <div class="mb-5">
+                <!-- 👉 UBAH BAGIAN INI AGAR ADA id="userNameDisplay" -->
+                <h1 class="text-lg font-bold text-slate-900">Halo, <span id="userNameDisplay">Syifa</span> 👋</h1>
+                <p class="text-xs text-slate-400">Selamat datang di Hustleakp</p>
+            </div>
+
+            <!-- Banner Motivasi / Informasi -->
+            <div class="bg-indigo-50 border border-indigo-100/60 p-4 rounded-2xl shadow-sm mb-6 flex justify-between items-center">
+                <div class="pr-2">
+                    <h2 class="text-xs font-bold text-slate-900 mb-1 leading-snug">Yuk, jaga dunia digital yang aman dan positif!</h2>
+                    <p class="text-[10px] text-slate-500">Kamu tidak sendirian.</p>
+                </div>
+                <div class="w-16 h-16 bg-indigo-200/50 rounded-xl flex-shrink-0 flex items-center justify-center text-indigo-700 font-bold text-xs">
+                    👧🏻
+                </div>
+            </div>
+
+            <!-- Grid 4 Menu Utama -->
+            <div class="grid grid-cols-2 gap-3 mb-4">
+                <!-- Menu 1: Edukasi -->
+                <a href="edukasi.html" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:border-indigo-200 transition">
+                    <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-2">
+                        📖
+                    </div>
+                    <span class="text-xs font-bold text-slate-800">Edukasi</span>
+                    <span class="text-[10px] text-slate-400">Cyberbullying</span>
+                </a>
+
+                <!-- Menu 2: Lapor -->
+                <a href="lapor.html" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:border-indigo-200 transition">
+                    <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-2">
+                        🛡️
+                    </div>
+                    <span class="text-xs font-bold text-slate-800">Lapor</span>
+                    <span class="text-[10px] text-slate-400">Cyberbullying</span>
+                </a>
+
+                <!-- Menu 3: Cerita & Dukungan -->
+                <a href="cerita.html" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:border-indigo-200 transition">
+                    <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-2">
+                        💬
+                    </div>
+                    <span class="text-xs font-bold text-slate-800">Cerita & Dukungan</span>
+                </a>
+
+                <!-- Menu 4: Bantuan Konseling -->
+                <a href="konseling.html" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:border-indigo-200 transition">
+                    <div class="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-2">
+                        🤝
+                    </div>
+                    <span class="text-xs font-bold text-slate-800">Bantuan Konseling</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bagian Navigasi Bawah (Bottom Navigation) -->
+        <div class="border-t border-slate-200 pt-3 flex justify-around text-center text-slate-400 text-[10px]">
+            <a href="dasboard.html" 
+                class="text-indigo-600 font-semibold flex flex-col items-center">
+                <span class="text-sm">🏠</span>
+                <span class="mt-0.5">Beranda</span>
+            </a>
+            <a href="artiedu.html" class="flex flex-col items-center hover:text-indigo-600">
+                <span class="text-sm">📖</span>
+                <span class="mt-0.5">Edukasi</span>
+            </a>
+            <a href="lapor.html" class="flex flex-col items-center hover:text-indigo-600">
+                <span class="text-sm">🛡️</span>
+                <span class="mt-0.5">Laporan</span>
+            </a>
+            <a href="account.html" 
+                class="flex flex-col items-center hover:text-indigo-600">
+                <span class="text-sm">👤</span>
+                <span class="mt-0.5">Profil</span>
+            </a>
+        </div>
+
+    </div>
+        <script>
+                window.addEventListener('DOMContentLoaded', () => {
+                    const savedUser = localStorage.getItem('hustleakpUser');
+                    const nameDisplay = document.getElementById('userNameDisplay');
+                    
+                    if (savedUser && nameDisplay) {
+                        nameDisplay.textContent = savedUser;
+                    }
+                });
+        </script>
+</body>
+</html>

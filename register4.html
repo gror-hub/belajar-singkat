@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeNet - Tanggal Lahir</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen">
+
+    <!-- Container utama ala layar HP -->
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-8 text-slate-800 min-h-[600px]">
+        
+        <!-- Bagian Atas: Tombol Kembali & Judul -->
+        <div>
+            <div class="flex items-center justify-between mb-8">
+                <a href="register3.html" class="text-slate-600 hover:text-indigo-600 font-bold">
+                    &larr;
+                </a>
+                <h1 class="text-sm font-bold text-slate-900">Daftar</h1>
+                <div class="w-4"></div> <!-- Spacer penyeimbang -->
+            </div>
+
+            <!-- Indikator Langkah (Step 4 dari 4 Aktif) -->
+            <div class="flex items-center justify-center space-x-3 mb-8">
+                <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">✓</div>
+                <div class="w-6 h-[2px] bg-indigo-600"></div>
+                <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">✓</div>
+                <div class="w-6 h-[2px] bg-indigo-600"></div>
+                <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">✓</div>
+                <div class="w-6 h-[2px] bg-indigo-600"></div>
+                <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">4</div>
+            </div>
+
+            <!-- Label & Form Tanggal Lahir -->
+            <div class="mb-6">
+                <h2 class="text-lg font-bold text-slate-900 mb-1">Tanggal lahir</h2>
+                <p class="text-xs text-slate-400 mb-6">Untuk menyesuaikan pengalaman untukmu.</p>
+                
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </span>
+                    <input type="date" class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:border-indigo-600 transition text-slate-600">
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian Bawah: Tombol Selanjutnya ke Verifikasi OTP -->
+        <div>
+            <a href="verify-otp.html" class="w-full bg-indigo-600 text-white font-semibold py-3.5 rounded-2xl shadow-md hover:bg-indigo-700 transition duration-200 block text-center text-sm">
+                Selanjutnya
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

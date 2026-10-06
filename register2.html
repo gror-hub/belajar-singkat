@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeNet - Daftar Email atau HP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen">
+
+    <!-- Container utama ala layar HP -->
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-8 text-slate-800 min-h-[600px]">
+        
+        <!-- Bagian Atas: Tombol Kembali & Judul -->
+        <div>
+            <div class="flex items-center justify-between mb-8">
+                <a href="register1.html" class="text-slate-600 hover:text-indigo-600 font-bold">
+                    &larr;
+                </a>
+                <h1 class="text-sm font-bold text-slate-900">Daftar</h1>
+                <div class="w-4"></div> <!-- Spacer penyeimbang -->
+            </div>
+
+            <!-- Indikator Langkah (Step 2 dari 4 Aktif) -->
+            <div class="flex items-center justify-center space-x-3 mb-8">
+                <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">✓</div>
+                <div class="w-6 h-[2px] bg-indigo-600"></div>
+                <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">2</div>
+                <div class="w-6 h-[2px] bg-slate-200"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center text-xs font-bold">3</div>
+                <div class="w-6 h-[2px] bg-slate-200"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center text-xs font-bold">4</div>
+            </div>
+
+            <!-- Label & Form Input Email/No HP -->
+            <div class="mb-6">
+                <h2 class="text-lg font-bold text-slate-900 mb-1">Masukkan email atau nomor HP</h2>
+                <p class="text-xs text-slate-400 mb-6">Kami akan mengirimkan kode verifikasi.</p>
+                
+                <div class="relative mb-4">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </span>
+                    <input type="text" placeholder="Email atau nomor HP" class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:border-indigo-600 transition">
+                </div>
+
+                <!-- Tombol Alternatif: Daftar dengan Google -->
+                <button onclick="alert('Fitur Daftar dengan Google!')" class="w-full bg-slate-50 border border-slate-200 text-slate-700 font-medium py-3 rounded-2xl flex items-center justify-center space-x-2 hover:bg-slate-100 transition duration-200 text-xs shadow-sm">
+                    <span class="font-bold text-indigo-600">G</span>
+                    <span>Daftar dengan Google</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Bagian Bawah: Tombol Selanjutnya ke Step 3 -->
+        <div>
+            <a href="register3.html" class="w-full bg-indigo-600 text-white font-semibold py-3.5 rounded-2xl shadow-md hover:bg-indigo-700 transition duration-200 block text-center text-sm">
+                Selanjutnya
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustleakp - Verifikasi Kode OTP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen">
+
+    <!-- Container utama ala layar HP -->
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-8 text-slate-800 min-h-[600px]">
+        
+        <!-- Bagian Atas: Tombol Kembali & Judul -->
+        <div>
+            <div class="flex items-center justify-between mb-8">
+                <a href="register4.html" class="text-slate-600 hover:text-indigo-600 font-bold">
+                    &larr;
+                </a>
+                <h1 class="text-sm font-bold text-slate-900">Verifikasi Kode</h1>
+                <div class="w-4"></div> <!-- Spacer penyeimbang -->
+            </div>
+
+            <!-- Ilustrasi / Icon Amplop Surat -->
+            <div class="flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mb-6 text-indigo-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                </div>
+
+                <h2 class="text-lg font-bold text-slate-900 mb-1">Masukkan kode verifikasi</h2>
+                <p class="text-xs text-slate-400 mb-8">Kode telah dikirim ke email/nomor HP kamu.</p>
+                
+                <!-- Kotak Input OTP (5 Digit Kotak) -->
+                <div class="flex justify-center space-x-2 mb-6">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-slate-200 rounded-xl text-lg font-bold focus:outline-none focus:border-indigo-600 transition">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-slate-200 rounded-xl text-lg font-bold focus:outline-none focus:border-indigo-600 transition">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-slate-200 rounded-xl text-lg font-bold focus:outline-none focus:border-indigo-600 transition">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-slate-200 rounded-xl text-lg font-bold focus:outline-none focus:border-indigo-600 transition">
+                    <input type="text" maxlength="1" class="w-12 h-12 text-center border border-slate-200 rounded-xl text-lg font-bold focus:outline-none focus:border-indigo-600 transition">
+                </div>
+
+                <!-- Timer & Tombol Kirim Ulang -->
+                <div class="text-xs text-slate-400">
+                    <span class="font-medium text-slate-600">00:59</span>
+                    <a href="#" onclick="alert('Kode OTP dikirim ulang!')" class="text-indigo-600 hover:underline ml-1">Kirim ulang</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian Bawah: Tombol Lanjut ke Dashboard -->
+        <div>
+            <a href="complete-profile.html" class="w-full bg-indigo-600 text-white font-semibold py-3.5 rounded-2xl shadow-md hover:bg-indigo-700 transition duration-200 block text-center text-sm">
+                Lanjut
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

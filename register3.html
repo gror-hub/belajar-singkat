@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeNet - Buat Kata Sandi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen">
+
+    <!-- Container utama ala layar HP -->
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-8 text-slate-800 min-h-[600px]">
+        
+        <!-- Bagian Atas: Tombol Kembali & Judul -->
+        <div>
+            <div class="flex items-center justify-between mb-8">
+                <a href="register2.html" class="text-slate-600 hover:text-indigo-600 font-bold">
+                    &larr;
+                </a>
+                <h1 class="text-sm font-bold text-slate-900">Daftar</h1>
+                <div class="w-4"></div> <!-- Spacer penyeimbang -->
+            </div>
+
+            <!-- Indikator Langkah (Step 3 dari 4 Aktif) -->
+            <div class="flex items-center justify-center space-x-3 mb-8">
+                <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">✓</div>
+                <div class="w-6 h-[2px] bg-indigo-600"></div>
+                <div class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center text-xs font-bold">✓</div>
+                <div class="w-6 h-[2px] bg-indigo-600"></div>
+                <div class="w-8 h-8 rounded-full bg-indigo-600 text-white flex items-center justify-center text-xs font-bold">3</div>
+                <div class="w-6 h-[2px] bg-slate-200"></div>
+                <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center text-xs font-bold">4</div>
+            </div>
+
+            <!-- Label & Form Input Kata Sandi -->
+            <div class="mb-6">
+                <h2 class="text-lg font-bold text-slate-900 mb-1">Buat kata sandi</h2>
+                <p class="text-xs text-slate-400 mb-6">Gunakan minimal 8 karakter. Kombinasi huruf dan angka lebih aman.</p>
+                
+                <div class="relative mb-4">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                    </span>
+                    <input type="password" placeholder="Kata sandi" class="w-full pl-10 pr-10 py-3 border border-slate-200 rounded-2xl text-sm focus:outline-none focus:border-indigo-600 transition">
+                    <span class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round5" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                        </svg>
+                    </span>
+                </div>
+
+                <!-- Petunjuk Keamanan Kata Sandi -->
+                <div class="space-y-2 text-xs text-slate-400 pl-1">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
+                        <span>Minimal 8 karakter</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
+                        <span>Ada huruf kapital</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-1.5 h-1.5 bg-slate-300 rounded-full"></span>
+                        <span>Ada angka</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bagian Bawah: Tombol Selanjutnya ke Step 4 -->
+        <div>
+            <a href="register4.html" class="w-full bg-indigo-600 text-white font-semibold py-3.5 rounded-2xl shadow-md hover:bg-indigo-700 transition duration-200 block text-center text-sm">
+                Selanjutnya
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
