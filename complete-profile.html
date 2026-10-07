@@ -10,7 +10,7 @@
 <body class="bg-slate-900 flex items-center justify-center min-h-screen">
 
     <!-- Container utama ala layar HP -->
-    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-6 text-slate-800 min-h-[600px]">
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-6 text-slate-800 min-h-[00px]">
         
         <!-- Bagian Atas -->
         <div>
@@ -76,15 +76,46 @@
 
     </div>
 
-    <!-- Skrip JavaScript untuk menyimpan nama ke localStorage -->
+<!-- Skrip JavaScript untuk menyimpan profil dan multi-akun ke localStorage -->
     <script>
         function saveProfile() {
-            const username = document.getElementById('usernameInput').value;
-            if (username.trim() !== "") {
-                localStorage.setItem('hustleakpUser', username);
+            const username = document.getElementById('usernameInput').value.trim();
+            
+            // Ambil data sementara dari tahapan registrasi sebelumnya
+            const regName = localStorage.getItem('userName') || 'Pengguna Baru';
+            const regEmail = localStorage.getItem('userEmail') || 'user@email.com';
+            
+            // Tentukan username/handle akhir
+            const finalUsername = username !== "" ? username : regEmail.split('@')[0];
+
+            // Buat objek data akun lengkap
+            const userData = {
+                name: regName,
+                handle: finalUsername,
+                email: regEmail,
+                birthdate: localStorage.getItem('userBirthdate') || ''
+            };
+
+            // 1. Ambil daftar semua akun yang pernah terdaftar
+            let allUsers = JSON.parse(localStorage.getItem('hustleakp_all_users')) || [];
+            
+            // 2. Cek apakah email sudah terdaftar, jika ada update, jika belum tambahkan baru
+            const existingIndex = allUsers.findIndex(u => u.email === regEmail);
+            if (existingIndex !== -1) {
+                allUsers[existingIndex] = userData;
             } else {
-                localStorage.setItem('hustleakpUser', 'Pengguna');
+                allUsers.push(userData);
             }
+            
+            // Simpan kembali database multi-akun
+            localStorage.setItem('hustleakp_all_users', JSON.stringify(allUsers));
+
+            // 3. Set sesi akun yang sedang aktif saat ini
+            localStorage.setItem('currentUserEmail', regEmail);
+            localStorage.setItem('hustleakpUser', finalUsername);
+            localStorage.setItem('userHandle', finalUsername);
+            localStorage.setItem('isLoggedIn', 'true');
+
             // Berpindah ke halaman sukses registrasi
             window.location.href = 'success-register.html';
         }

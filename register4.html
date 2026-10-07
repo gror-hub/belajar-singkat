@@ -10,7 +10,7 @@
 <body class="bg-slate-900 flex items-center justify-center min-h-screen">
 
     <!-- Container utama ala layar HP -->
-    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-8 text-slate-800 min-h-[600px]">
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-8 text-slate-800 min-h-[700px]">
         
         <!-- Bagian Atas: Tombol Kembali & Judul -->
         <div>
@@ -50,13 +50,25 @@
         </div>
 
         <!-- Bagian Bawah: Tombol Selanjutnya ke Verifikasi OTP -->
-        <div>
-            <a href="verify-otp.html" class="w-full bg-indigo-600 text-white font-semibold py-3.5 rounded-2xl shadow-md hover:bg-indigo-700 transition duration-200 block text-center text-sm">
-                Selanjutnya
-            </a>
-        </div>
-
+       <!-- Ganti tombol di bagian bawah register4.html -->
+    <div>
+        <button onclick="saveRegister4()" class="w-full bg-indigo-600 text-white font-semibold py-3.5 rounded-2xl shadow-md hover:bg-indigo-700 transition duration-200 block text-center text-sm cursor-pointer">
+            Selanjutnya
+        </button>
     </div>
+
+    <!-- Skrip untuk simpan tanggal lahir -->
+    <script>
+        function saveRegister4() {
+            const dateInput = document.querySelector('input[type="date"]').value;
+            if (dateInput) {
+                localStorage.setItem('userBirthdate', dateInput);
+                window.location.href = 'verify-otp.html'; 
+            } else {
+                alert('Mohon pilih tanggal lahir terlebih dahulu.');
+            }
+        }
+    </script>
 
 </body>
 </html>

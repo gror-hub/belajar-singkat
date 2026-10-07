@@ -10,7 +10,7 @@
 <body class="bg-slate-900 flex items-center justify-center min-h-screen">
 
     <!-- Container utama ala layar HP -->
-    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between relative min-h-[660px]">
+    <div class="w-full max-w-sm bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between relative min-h-[700px]">
         
         <!-- Konten Halaman Akun -->
         <div class="p-6 pb-24">
@@ -113,17 +113,22 @@
 
     <!-- Skrip JavaScript Logout untuk Reset Akun -->
     <script>
-        function handleLogout() {
-            if (confirm("Apakah kamu yakin ingin keluar dari akun ini?")) {
-                // Menghapus data sesi dan nama pengguna dari browser
-                localStorage.removeItem('isLoggedIn');
-                localStorage.removeItem('hustleakpUser');
-                
-                alert('Berhasil keluar! Perangkat siap digunakan akun lain.');
-                // Mengarahkan kembali ke halaman login/auth
-                window.location.href = 'login.html';
-            }
+        <!-- Skrip JavaScript Logout untuk Reset Akun -->
+    function handleLogout() {
+        if (confirm("Apakah kamu yakin ingin keluar dari akun ini?")) {
+            // Menghapus seluruh data sesi dan profil yang tersimpan di browser
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('hustleakpUser');
+            localStorage.removeItem('userName');
+            localStorage.removeItem('userHandle');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('userBio');
+            
+            alert('Berhasil keluar! Perangkat siap digunakan akun lain.');
+            // Mengarahkan kembali ke halaman login/auth
+            window.location.href = 'login.html';
         }
+    }
     </script>
 </body>
 </html>

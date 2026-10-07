@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Laporan - Hustleakp</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen">
+
+    <!-- Container utama ala layar HP -->
+    <div class="w-full max-w-sm bg-slate-50 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between min-h-[750px] relative text-slate-800">
+        
+        <!-- Konten Utama -->
+        <div class="p-6 pb-24 overflow-y-auto">
+            
+            <!-- Header -->
+            <div class="flex items-center mb-6">
+                <a href="account.html" class="text-slate-700 hover:text-indigo-600 font-bold text-lg mr-4">&larr;</a>
+                <h1 class="text-base font-bold text-slate-900">Riwayat Laporan</h1>
+            </div>
+
+            <!-- Daftar Riwayat Laporan -->
+            <div class="space-y-3">
+                
+                <!-- Laporan 1: Diproses -->
+                <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between space-x-3">
+                    <div class="flex items-center space-x-3 min-w-0">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-xl shrink-0 border border-indigo-100">
+                            📄
+                        </div>
+                        <div class="min-w-0">
+                            <h2 class="text-xs font-bold text-slate-900 truncate mb-0.5">Komentar yang menyakiti</h2>
+                            <p class="text-[10px] text-slate-400">12 Mei 2025</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] font-semibold bg-indigo-50 text-indigo-600 px-2.5 py-1 rounded-full shrink-0">Diproses</span>
+                </div>
+
+                <!-- Laporan 2: Ditolak -->
+                <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between space-x-3">
+                    <div class="flex items-center space-x-3 min-w-0">
+                        <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center text-xl shrink-0 border border-red-100">
+                            🖼️
+                        </div>
+                        <div class="min-w-0">
+                            <h2 class="text-xs font-bold text-slate-900 truncate mb-0.5">Penyebaran foto pribadi</h2>
+                            <p class="text-[10px] text-slate-400">3 Mei 2025</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] font-semibold bg-red-50 text-red-600 px-2.5 py-1 rounded-full shrink-0">Ditolak</span>
+                </div>
+
+                <!-- Laporan 3: Selesai -->
+                <div class="bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-between space-x-3">
+                    <div class="flex items-center space-x-3 min-w-0">
+                        <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-xl shrink-0 border border-emerald-100">
+                            👤
+                        </div>
+                        <div class="min-w-0">
+                            <h2 class="text-xs font-bold text-slate-900 truncate mb-0.5">Akun palsu</h2>
+                            <p class="text-[10px] text-slate-400">20 April 2025</p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] font-semibold bg-emerald-50 text-emerald-600 px-2.5 py-1 rounded-full shrink-0">Selesai</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="absolute bottom-0 left-0 w-full bg-white border-t border-slate-100 py-3 px-6 flex justify-around items-center text-slate-400 text-[10px]">
+            <a href="dasboard.html" class="flex flex-col items-center space-y-1 hover:text-indigo-600">
+                <span class="text-base">🏠</span>
+                <span>Beranda</span>
+            </a>
+            <a href="artiedu.html" class="flex flex-col items-center space-y-1 hover:text-indigo-600">
+                <span class="text-base">📖</span>
+                <span>Edukasi</span>
+            </a>
+            <a href="lapor.html" class="flex flex-col items-center space-y-1 hover:text-indigo-600">
+                <span class="text-base">🛡️</span>
+                <span>Laporan</span>
+            </a>
+            <a href="account.html" class="flex flex-col items-center space-y-1 text-indigo-600 font-bold">
+                <span class="text-base">👤</span>
+                <span>Akun</span>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>

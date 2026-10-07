@@ -21,52 +21,52 @@
                 <h1 class="text-base font-bold text-slate-900">Artikel & Edukasi</h1>
             </div>
 
-            <!-- Filter Kategori (Chips) -->
+            <!-- Filter Kategori (Chips dengan fungsi klik) -->
             <div class="flex space-x-2 overflow-x-auto pb-3 mb-4 scrollbar-none">
-                <button class="bg-indigo-600 text-white px-4 py-1.5 rounded-full text-[11px] font-semibold shrink-0 shadow-sm">Semua</button>
-                <button class="bg-slate-100 text-slate-600 hover:bg-slate-200 px-3.5 py-1.5 rounded-full text-[11px] font-medium shrink-0 transition">Cyberbullying</button>
-                <button class="bg-slate-100 text-slate-600 hover:bg-slate-200 px-3.5 py-1.5 rounded-full text-[11px] font-medium shrink-0 transition">Tips</button>
-                <button class="bg-slate-100 text-slate-600 hover:bg-slate-200 px-3.5 py-1.5 rounded-full text-[11px] font-medium shrink-0 transition">Kesehatan Mental</button>
+                <button onclick="filterArticle('semua', this)" class="category-btn bg-indigo-600 text-white px-4 py-1.5 rounded-full text-[11px] font-semibold shrink-0 shadow-sm transition">Semua</button>
+                <button onclick="filterArticle('cyberbullying', this)" class="category-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-3.5 py-1.5 rounded-full text-[11px] font-medium shrink-0 transition">Cyberbullying</button>
+                <button onclick="filterArticle('tips', this)" class="category-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-3.5 py-1.5 rounded-full text-[11px] font-medium shrink-0 transition">Tips</button>
+                <button onclick="filterArticle('mental', this)" class="category-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-3.5 py-1.5 rounded-full text-[11px] font-medium shrink-0 transition">Kesehatan Mental</button>
             </div>
 
-            <!-- Daftar Artikel (Card List) -->
-            <div class="space-y-3">
+            <!-- Daftar Artikel (Card List dengan atribut data-category) -->
+            <div class="space-y-3" id="article-list">
                 
-                <!-- Artikel 1 -->
-                <a href="#" onclick="alert('Membuka artikel: Apa itu Cyberbullying?')" class="flex items-center bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 transition space-x-3.5">
+                <!-- Artikel 1 (Kategori: Cyberbullying) -->
+                <a href="detail-artikel-1.html" data-category="cyberbullying" class="article-card flex items-center bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 transition space-x-3.5">
                     <div class="w-16 h-16 bg-indigo-50 rounded-xl flex items-center justify-center text-2xl shrink-0 overflow-hidden border border-indigo-100">
                         💻📚
                     </div>
                     <div class="flex-1 min-w-0">
                         <h2 class="text-xs font-bold text-slate-900 truncate mb-0.5">Apa itu Cyberbullying?</h2>
                         <p class="text-[10px] text-slate-400 truncate mb-1.5">Pengertian, jenis, dan contohnya.</p>
-                        <span class="text-[9px] text-slate-400 font-medium bg-slate-100 px-2 py-0.5 rounded-md">5 menit baca</span>
+                        <span class="text-[9px] text-indigo-600 font-medium bg-indigo-50 px-2 py-0.5 rounded-md">Cyberbullying</span>
                     </div>
                     <span class="text-slate-300 text-sm">&rsaquo;</span>
                 </a>
 
-                <!-- Artikel 2 -->
-                <a href="#" onclick="alert('Membuka artikel: Tanda-tanda Kamu Mengalami Cyberbullying')" class="flex items-center bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 transition space-x-3.5">
+                <!-- Artikel 2 (Kategori: Kesehatan Mental) -->
+                <a href="detail-artikel-2.html" data-category="mental" class="article-card flex items-center bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 transition space-x-3.5">
                     <div class="w-16 h-16 bg-indigo-50 rounded-xl flex items-center justify-center text-2xl shrink-0 overflow-hidden border border-indigo-100">
                         🛡️👤
                     </div>
                     <div class="flex-1 min-w-0">
                         <h2 class="text-xs font-bold text-slate-900 truncate mb-0.5">Tanda-tanda Kamu Mengalami Cyberbullying</h2>
                         <p class="text-[10px] text-slate-400 truncate mb-1.5">Kenali tanda dan dampaknya.</p>
-                        <span class="text-[9px] text-slate-400 font-medium bg-slate-100 px-2 py-0.5 rounded-md">7 menit baca</span>
+                        <span class="text-[9px] text-indigo-600 font-medium bg-indigo-50 px-2 py-0.5 rounded-md">Kesehatan Mental</span>
                     </div>
                     <span class="text-slate-300 text-sm">&rsaquo;</span>
                 </a>
 
-                <!-- Artikel 3 -->
-                <a href="#" onclick="alert('Membuka artikel: Cara Menghadapi Cyberbullying')" class="flex items-center bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 transition space-x-3.5">
+                <!-- Artikel 3 (Kategori: Tips) -->
+                <a href="detail-artikel-3.html" data-category="tips" class="article-card flex items-center bg-white p-3.5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 transition space-x-3.5">
                     <div class="w-16 h-16 bg-indigo-50 rounded-xl flex items-center justify-center text-2xl shrink-0 overflow-hidden border border-indigo-100">
                         ✍️💻
                     </div>
                     <div class="flex-1 min-w-0">
                         <h2 class="text-xs font-bold text-slate-900 truncate mb-0.5">Cara Menghadapi Cyberbullying</h2>
                         <p class="text-[10px] text-slate-400 truncate mb-1.5">Langkah tepat untuk melindungi diri.</p>
-                        <span class="text-[9px] text-slate-400 font-medium bg-slate-100 px-2 py-0.5 rounded-md">6 menit baca</span>
+                        <span class="text-[9px] text-indigo-600 font-medium bg-indigo-50 px-2 py-0.5 rounded-md">Tips</span>
                     </div>
                     <span class="text-slate-300 text-sm">&rsaquo;</span>
                 </a>
@@ -95,5 +95,27 @@
         </div>
 
     </div>
+
+    <!-- Script Sederhana untuk Filter Kategori -->
+    <script>
+        function filterArticle(category, element) {
+            // Ubah warna tombol aktif
+            const buttons = document.querySelectorAll('.category-btn');
+            buttons.forEach(btn => {
+                btn.className = "category-btn bg-slate-100 text-slate-600 hover:bg-slate-200 px-3.5 py-1.5 rounded-full text-[11px] font-medium shrink-0 transition";
+            });
+            element.className = "category-btn bg-indigo-600 text-white px-4 py-1.5 rounded-full text-[11px] font-semibold shrink-0 shadow-sm transition";
+
+            // Saring kartu artikel
+            const cards = document.querySelectorAll('.article-card');
+            cards.forEach(card => {
+                if (category === 'semua' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hustleakp - Edit Profil</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen">
+
+    <!-- Container utama ala layar HP -->
+    <div class="w-full max-w-sm bg-slate-50 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between min-h-[750px] relative text-slate-800">
+        
+        <!-- Konten Utama -->
+        <div class="p-6 pb-24 overflow-y-auto">
+            
+            <!-- Header -->
+            <div class="flex items-center mb-6">
+                <a href="account.html" class="text-slate-700 hover:text-indigo-600 font-bold text-lg mr-4">&larr;</a>
+                <h1 class="text-base font-bold text-slate-900">Edit Profil</h1>
+            </div>
+
+            <!-- Bagian Foto Profil -->
+            <div class="flex flex-col items-center mb-6">
+                <div class="relative">
+                    <div class="w-20 h-20 bg-indigo-100 rounded-full flex items-center justify-center text-3xl font-bold text-indigo-600 border-2 border-indigo-200 overflow-hidden shadow-sm">
+                        👤
+                    </div>
+                    <!-- Tombol Ubah Foto -->
+                    <label for="upload-foto" class="absolute bottom-0 right-0 bg-indigo-600 text-white p-1.5 rounded-full cursor-pointer shadow-md hover:bg-indigo-700 transition">
+                        <span class="text-xs">📷</span>
+                    </label>
+                    <input type="file" id="upload-foto" class="hidden" accept="image/*">
+                </div>
+                <span class="text-[11px] text-slate-400 mt-2 font-medium">Ketuk ikon kamera untuk ganti foto</span>
+            </div>
+
+            <!-- Form Edit Profil dengan Handler JavaScript -->
+            <form onsubmit="handleSaveProfile(event)" class="space-y-4">
+                
+                <!-- Nama Lengkap -->
+                <div>
+                    <label class="block text-[11px] font-semibold text-slate-600 mb-1">Nama Lengkap</label>
+                    <input type="text" id="inputName" value="Ivana Nur Azalia" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 transition" required>
+                </div>
+
+                <!-- Username / Nama Panggilan -->
+                <div>
+                    <label class="block text-[11px] font-semibold text-slate-600 mb-1">Username / Panggilan</label>
+                    <input type="text" id="inputUsername" value="Dap" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 transition" required>
+                </div>
+
+                <!-- Email (Readonly) -->
+                <div>
+                    <label class="block text-[11px] font-semibold text-slate-600 mb-1">Email</label>
+                    <input type="email" id="inputEmail" value="ivana@student.telkom.sch.id" class="w-full px-3.5 py-2.5 bg-slate-100 border border-slate-200 rounded-xl text-xs text-slate-500 cursor-not-allowed" disabled>
+                    <span class="text-[9px] text-slate-400 mt-1 block">Email tidak dapat diubah demi keamanan.</span>
+                </div>
+
+                <!-- Bio Singkat -->
+                <div>
+                    <label class="block text-[11px] font-semibold text-slate-600 mb-1">Bio Singkat</label>
+                    <textarea id="inputBio" rows="3" class="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-800 focus:outline-none focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 transition resize-none">Siswa SMK Telkom Makassar | Tech & Security Enthusiast</textarea>
+                </div>
+
+                <!-- Tombol Simpan -->
+                <div class="pt-4">
+                    <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-md shadow-indigo-200">
+                        Simpan Perubahan
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+        <!-- Bottom Navigation Bar -->
+        <div class="absolute bottom-0 left-0 w-full bg-white border-t border-slate-100 py-3 px-6 flex justify-around items-center text-slate-400 text-[10px]">
+            <a href="dasboard.html" class="flex flex-col items-center space-y-1 hover:text-indigo-600">
+                <span class="text-base">🏠</span>
+                <span>Beranda</span>
+            </a>
+            <a href="edukasi.html" class="flex flex-col items-center space-y-1 hover:text-indigo-600">
+                <span class="text-base">📖</span>
+                <span>Edukasi</span>
+            </a>
+            <a href="lapor.html" class="flex flex-col items-center space-y-1 hover:text-indigo-600">
+                <span class="text-base">🛡️</span>
+                <span>Laporan</span>
+            </a>
+            <a href="account.html" class="flex flex-col items-center space-y-1 text-indigo-600 font-bold">
+                <span class="text-base">👤</span>
+                <span>Profil</span>
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Script JavaScript untuk localStorage -->
+    <script>
+        // Saat halaman dimuat, ambil data dari database multi-akun berdasarkan user yang sedang login
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentEmail = localStorage.getItem('currentUserEmail');
+            let allUsers = JSON.parse(localStorage.getItem('hustleakp_all_users')) || [];
+            
+            // Cari data akun yang sedang aktif
+            let activeUser = allUsers.find(u => u.email === currentEmail);
+
+            if (activeUser) {
+                // Masukkan data asli akun tersebut ke dalam form
+                if (document.getElementById('inputName')) document.getElementById('inputName').value = activeUser.name || '';
+                if (document.getElementById('inputUsername')) document.getElementById('inputUsername').value = activeUser.handle || '';
+                if (document.getElementById('inputBio')) document.getElementById('inputBio').value = activeUser.bio || '';
+                if (document.getElementById('inputEmail')) document.getElementById('inputEmail').value = activeUser.email || '';
+            } else {
+                // Fallback jika menggunakan data tunggal lama
+                const savedName = localStorage.getItem('userName');
+                const savedUsername = localStorage.getItem('userHandle');
+                const savedBio = localStorage.getItem('userBio');
+
+                if (savedName && document.getElementById('inputName')) document.getElementById('inputName').value = savedName;
+                if (savedUsername && document.getElementById('inputUsername')) document.getElementById('inputUsername').value = savedUsername;
+                if (savedBio && document.getElementById('inputBio')) document.getElementById('inputBio').value = savedBio;
+            }
+        });
+
+        function handleSaveProfile(event) {
+            event.preventDefault(); // Mencegah form reload bawaan HTML
+
+            const name = document.getElementById('inputName').value;
+            const username = document.getElementById('inputUsername').value;
+            const bio = document.getElementById('inputBio').value;
+            const currentEmail = localStorage.getItem('currentUserEmail');
+
+            // 1. Update data di database multi-akun (hustleakp_all_users)
+            let allUsers = JSON.parse(localStorage.getItem('hustleakp_all_users')) || [];
+            let userIndex = allUsers.findIndex(u => u.email === currentEmail);
+
+            if (userIndex !== -1) {
+                allUsers[userIndex].name = name;
+                allUsers[userIndex].handle = username;
+                allUsers[userIndex].bio = bio;
+                localStorage.setItem('hustleakp_all_users', JSON.stringify(allUsers));
+            }
+
+            // 2. Perbarui juga data sesi aktif saat ini
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userHandle', username);
+            localStorage.setItem('hustleakpUser', username);
+            localStorage.setItem('userBio', bio);
+
+            alert('Perubahan profil berhasil disimpan!');
+
+            // Redirect kembali ke halaman profil
+            window.location.href = 'account.html';
+        }
+    </script>
+</body>
+</html>

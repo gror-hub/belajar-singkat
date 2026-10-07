@@ -10,7 +10,7 @@
 <body class="bg-slate-900 flex items-center justify-center min-h-screen">
 
     <!-- Container utama ala layar HP -->
-    <div class="w-full max-w-sm bg-slate-50 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-6 text-slate-800 min-h-[600px] relative">
+    <div class="w-full max-w-sm bg-slate-50 rounded-3xl shadow-2xl overflow-hidden flex flex-col justify-between p-6 text-slate-800 min-h-[700px] relative">
         
         <!-- Bagian Atas: Logo, Nama Aplikasi & Notifikasi -->
         <div>
@@ -105,15 +105,26 @@
         </div>
 
     </div>
-        <script>
-                window.addEventListener('DOMContentLoaded', () => {
-                    const savedUser = localStorage.getItem('hustleakpUser');
-                    const nameDisplay = document.getElementById('userNameDisplay');
-                    
-                    if (savedUser && nameDisplay) {
-                        nameDisplay.textContent = savedUser;
-                    }
-                });
+          <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedUsername = localStorage.getItem('userHandle');
+        const savedEmail = localStorage.getItem('userEmail');
+        const nameDisplay = document.getElementById('userNameDisplay');
+        
+        if (nameDisplay) {
+            if (savedUsername) {
+                // Jika user sudah mengatur handle/nama profil
+                nameDisplay.textContent = savedUsername;
+            } else if (savedEmail) {
+                // Jika belum ada handle, ambil nama dari bagian depan email (sebelum '@')
+                const nameFromEmail = savedEmail.split('@')[0];
+                // Huruf pertama dibuat kapital agar rapi
+                nameDisplay.textContent = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+            } else {
+                nameDisplay.textContent = 'Pengguna';
+            }
+        }
+        });
         </script>
 </body>
 </html>
